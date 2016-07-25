@@ -1,0 +1,11 @@
+<KinBody name="kitchen_saucepan">
+  <modelsdir>.</modelsdir>     <!--for relative path -->
+  <Body type="dynamic">
+    <Geom type="trimesh">
+      <Data>../objects//Objects_in_kitchen/saucepan.dae</Data>
+      <Render>../objects//Objects_in_kitchen/saucepan.dae</Render>
+      <Collision>../objects//Objects_in_kitchen/saucepan.dae</Collision>
+      <DiffuseColor>1 1 1 </DiffuseColor>>
+    </Geom>      
+  </Body>
+</KinBody>

@@ -1,0 +1,109 @@
+<!-- combines the moving base and arm with Allegro Hand-->
+
+<Robot name="kitchen_robot">
+  <!-- 
+
+   <KinBody name="ground">
+    <Body type="static">
+      <Translation>0 0 0</Translation>
+      <Geom type="box">
+        <extents>2.5 2.5 0.005</extents>
+        <translation>0 0 -0.005</translation>
+        <diffuseColor>.6 .6 .6</diffuseColor>
+        <ambientColor>0.6 0.6 0.6</ambientColor>
+      </Geom>
+    </Body>
+  </KinBody>
+static floor-->
+
+
+  <!-- moving base-->
+  <KinBody>
+    <Body name="bodybase" type="dynamic">
+        <Geom type="box">
+          <extents>0.15 0.2 0.37017</extents>
+          <translation>0 0 0.58068</translation>
+          <DiffuseColor>1 1 0 </DiffuseColor>
+          <RotationAxis>0 0 1 -70</RotationAxis>
+        </Geom>
+    </Body>
+  </KinBody>
+
+
+
+  <!-- segwayrmp base 
+<KinBody>
+  <Body name="bodybase" type="dynamic"> 
+    <Geom type="trimesh">
+      <Data>models/segwayrmp/segwayrmp.iv 1.3</Data>
+      <Render>models/segwayrmp/segwayrmp.iv 1.3</Render>
+      <Collision>models/segwayrmp/segwayrmp.iv 1.3</Collision>
+    </Geom>
+    
+    <translation>0 0 0.96</translation>
+    
+  </Body>
+  
+</KinBody>
+
+-->
+
+  <!-- husky base -->
+
+
+<KinBody file = "Kitchen_husky.kinbody.xml">
+  <translation>0 0 0.142</translation>
+  <RotationAxis>0 0 1 -70</RotationAxis>
+</KinBody>
+
+
+  <!-- lwr with allegroGrasp-->
+  <Robot>
+    <Robot file="lwr_in_kitchen.robot.xml"></Robot>
+    <translation>0 0 0.961</translation>
+    <RotationAxis>0 0 1 90</RotationAxis>
+  </Robot>
+
+
+ <KinBody>
+    <Joint name="dummy" type="hinge" enable="false">
+      <Body>bodybase</Body>
+      <Body>arm_0_link</Body>
+      <limitsdeg>0 0</limitsdeg>
+    </Joint>
+  </KinBody>
+
+     <Manipulator name="lwr">
+       <base>bodybase</base>
+       <effector>tool</effector>
+     </Manipulator>
+
+  <!-- 
+
+<Manipulator name="bodybasemove">
+    <base>bodybase</base>
+    <effector>bodybase</effector>
+    <direction>1 1 0</direction>
+  </Manipulator>
+-->
+
+
+<!--
+
+    <KinBody file="lwr.kinbody.xml"/>
+    <KinBody file="allegro.kinbody.xml"/>
+    <kinbody>
+       <body name="handbase">
+         <offsetfrom>arm_7_link</offsetfrom>
+         <Translation>0 0 0.015</Translation>
+ 		 <rotationaxis>0 0 1 -180</rotationaxis>      
+       </body>
+       <joint name="dummyhand" type="hinge" enable="false">
+         <body>arm_7_link</body>
+         <body>handbase</body>
+         <limits>0 0</limits>
+       </joint>
+     </kinbody>
+
+   -->
+</Robot>

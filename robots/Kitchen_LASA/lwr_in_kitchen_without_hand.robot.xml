@@ -1,0 +1,14 @@
+<!-- combines the LWR and Allegro Hand-->
+<!-- table-->
+<Robot name="LWR-Allegro">
+  <!--
+    <modelsdir>.</modelsdir>  
+ -->
+    <KinBody file="../lwr.kinbody.xml"/>  
+  <!--
+     <Manipulator name="lwr">
+       <base>arm_0_link</base>
+       <effector>tool</effector>
+     </Manipulator>     
+      -->   
+</Robot>

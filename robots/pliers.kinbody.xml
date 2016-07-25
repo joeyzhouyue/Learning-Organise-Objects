@@ -1,0 +1,11 @@
+<KinBody name="pliers">
+  <modelsdir>.</modelsdir>     <!--for relative path -->
+  <Body type="dynamic">
+    <Geom type="trimesh">
+      <Data>objects/pliers.stl 0.019</Data>
+      <Render>objects/pliers.stl 0.019</Render>
+      <transparency>0.5</transparency>
+      <DiffuseColor>0.862745 0.862745 0.862745 </DiffuseColor>>
+    </Geom>      
+  </Body>
+</KinBody>

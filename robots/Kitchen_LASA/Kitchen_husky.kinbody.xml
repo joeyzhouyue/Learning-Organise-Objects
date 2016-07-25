@@ -1,0 +1,102 @@
+
+<!--for husky clearpath -->
+<KinBody> 
+
+  <Body type="static">      
+  <Geom type="trimesh">
+    <Data>../objects//Objects_in_kitchen/husky/base_link.dae</Data>
+    <Render>../objects//Objects_in_kitchen/husky/base_link.dae</Render>
+    <Collision>../objects//Objects_in_kitchen/husky/base_link.dae</Collision>
+    <RotationAxis>1 0 0 90</RotationAxis>  
+
+    <!-- <DiffuseColor>1 0.960784 0.933333 </DiffuseColor> -->
+
+  </Geom>      
+  </Body>
+
+  <Body type="static">
+  <Geom type="trimesh">
+    <Data>../objects//Objects_in_kitchen/husky/top_plate.dae</Data>
+    <Render>../objects//Objects_in_kitchen/husky/top_plate.dae</Render>
+    <Collision>../objects//Objects_in_kitchen/husky/top_plate.dae</Collision>
+    <DiffuseColor>1 1 0 </DiffuseColor>
+    <RotationAxis>1 0 0 90</RotationAxis>  
+  </Geom>
+  </Body>
+
+  <Body type="static">
+  <Geom type="trimesh">
+    <Data>../objects//Objects_in_kitchen/husky/bumper.dae</Data>
+    <Render>../objects//Objects_in_kitchen/husky/bumper.dae</Render>
+    <Collision>../objects//Objects_in_kitchen/husky/bumper.dae</Collision>
+    <translation>0.47 0 0.091</translation>
+    <RotationAxis>1 0 0 90</RotationAxis>  
+  </Geom>
+  </Body>
+
+  <Body type="static">
+  <Geom type="trimesh">
+    <Data>../objects//Objects_in_kitchen/husky/bumper.dae</Data>
+    <Render>../objects//Objects_in_kitchen/husky/bumper.dae</Render>
+    <Collision>../objects//Objects_in_kitchen/husky/bumper.dae</Collision>
+    <translation>-0.47 0 0.091</translation>
+    <RotationAxis>0 0 1 180</RotationAxis>  
+    <RotationAxis>1 0 0 90</RotationAxis>  
+  </Geom>
+  </Body>
+
+  <Body type="static">
+  <Geom type="trimesh">
+    <Data>../objects//Objects_in_kitchen/husky/user_rail.dae </Data>
+    <Render>../objects//Objects_in_kitchen/husky/user_rail.dae </Render>
+    <Collision>../objects//Objects_in_kitchen/husky/user_rail.dae </Collision>
+    <translation>0.272 0 0.245</translation>
+    <RotationAxis>1 0 0 90</RotationAxis>  
+  </Geom>
+  </Body>
+
+
+  <Body type="static">
+  <Geom type="trimesh">
+    <Data>../objects//Objects_in_kitchen/husky/wheel.stl</Data>
+    <Render>../objects//Objects_in_kitchen/husky/wheel.stl</Render>
+    <Collision>../objects//Objects_in_kitchen/husky/wheel.stl</Collision>
+    <translation>-0.256 0.285475 0.035</translation>
+    <RotationAxis>1 0 0 -180</RotationAxis> 
+  </Geom>
+  </Body>
+
+  <Body type="static">
+  <Geom type="trimesh">
+    <Data>../objects//Objects_in_kitchen/husky/wheel.stl</Data>
+    <Render>../objects//Objects_in_kitchen/husky/wheel.stl</Render>
+    <Collision>../objects//Objects_in_kitchen/husky/wheel.stl</Collision>
+    <translation>-0.256 -0.285475 0.035</translation>
+    <RotationAxis>1 0 0 -180</RotationAxis> 
+  </Geom>
+  </Body>
+
+
+  <Body type="static">
+  <Geom type="trimesh">
+    <Data>../objects//Objects_in_kitchen/husky/wheel.stl</Data>
+    <Render>../objects//Objects_in_kitchen/husky/wheel.stl</Render>
+    <Collision>../objects//Objects_in_kitchen/husky/wheel.stl</Collision>
+    <translation>0.256 0.285475 0.035</translation>
+    <RotationAxis>1 0 0 -180</RotationAxis> 
+  </Geom>
+  </Body>
+
+  <Body type="static">
+  <Geom type="trimesh">
+    <Data>../objects//Objects_in_kitchen/husky/wheel.stl</Data>
+    <Render>../objects//Objects_in_kitchen/husky/wheel.stl</Render>
+    <Collision>../objects//Objects_in_kitchen/husky/wheel.stl</Collision>
+    <translation>0.256 -0.285475 0.035</translation>
+    <RotationAxis>1 0 0 -180</RotationAxis> 
+  </Geom>
+  </Body>
+
+
+
+</KinBody>

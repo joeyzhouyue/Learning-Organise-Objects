@@ -1,0 +1,83 @@
+<!-- combines the moving base and arm with Allegro Hand-->
+
+<Robot name="kitchen_robot">
+  <!-- 
+
+   <KinBody name="ground">
+    <Body type="static">
+      <Translation>0 0 0</Translation>
+      <Geom type="box">
+        <extents>2.5 2.5 0.005</extents>
+        <translation>0 0 -0.005</translation>
+        <diffuseColor>.6 .6 .6</diffuseColor>
+        <ambientColor>0.6 0.6 0.6</ambientColor>
+      </Geom>
+    </Body>
+  </KinBody>
+static floor-->
+
+
+  <!-- moving base-->
+  <KinBody>
+    <Body name="bodybase" type="dynamic">
+      <geom type="cylinder">
+        <radius>0.3</radius>
+        <height>0.8</height>
+        <translation>0 0 0.4</translation>
+        <RotationAxis>1 0 0 90</RotationAxis>
+        <DiffuseColor> 0.721569 0.52549 0.0431373</DiffuseColor>
+        <Transparency> 0.5</Transparency>>
+      </geom>
+    </Body>
+  </KinBody>
+
+  <!-- lwr with allegroGrasp-->
+  <Robot>
+    <Robot file="lwr_in_kitchen_without_hand.robot.xml"></Robot>
+    <translation>0 0 0.8</translation>
+    <RotationAxis>0 0 1 90</RotationAxis>
+  </Robot>
+
+
+ <KinBody>
+    <Joint name="dummy" type="hinge" enable="false">
+      <Body>bodybase</Body>
+      <Body>arm_0_link</Body>
+      <limitsdeg>0 0</limitsdeg>
+    </Joint>
+  </KinBody>
+
+     <Manipulator name="lwr">
+       <base>bodybase</base>
+       <effector>tool</effector>
+     </Manipulator>
+
+  <!-- 
+
+<Manipulator name="bodybasemove">
+    <base>bodybase</base>
+    <effector>bodybase</effector>
+    <direction>1 1 0</direction>
+  </Manipulator>
+-->
+
+
+<!--
+
+    <KinBody file="lwr.kinbody.xml"/>
+    <KinBody file="allegro.kinbody.xml"/>
+    <kinbody>
+       <body name="handbase">
+         <offsetfrom>arm_7_link</offsetfrom>
+         <Translation>0 0 0.015</Translation>
+ 		 <rotationaxis>0 0 1 -180</rotationaxis>      
+       </body>
+       <joint name="dummyhand" type="hinge" enable="false">
+         <body>arm_7_link</body>
+         <body>handbase</body>
+         <limits>0 0</limits>
+       </joint>
+     </kinbody>
+
+   -->
+</Robot>

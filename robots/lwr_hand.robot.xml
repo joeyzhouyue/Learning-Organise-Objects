@@ -1,0 +1,40 @@
+<!-- combines the LWR and Allegro Hand-->
+<!-- table-->
+<Robot name="LWR-Allegro">
+    <KinBody>
+      <Body name="rolly_table" type="static">
+        <Translation>0 0 -0.7</Translation>
+        <rotationaxis>1 0 0 90</rotationaxis>
+        <Geom type="trimesh">
+          <Data>objects/rolly-table.iv 1</Data>
+          <Render>objects/rolly-table.iv 1</Render>
+          <transparency>1.0</transparency>
+        </Geom>      
+      </Body>
+
+    </KinBody>
+    <KinBody file="lwr.kinbody.xml"/>
+    <KinBody file="allegro.kinbody.xml"/>
+    <kinbody>
+       <body name="handbase">
+         <offsetfrom>arm_7_link</offsetfrom>
+         <Translation>0 0 0.015</Translation>
+<!--  		 <rotationaxis>0 0 1 -90</rotationaxis>  -->         
+       </body>
+       <joint name="dummyhand" type="hinge" enable="false">
+         <body>arm_7_link</body>
+         <body>handbase</body>
+         <limits>0 0</limits>
+       </joint>
+       <joint name="armbasedummy" type="hinge" enable="false">
+          <body>rolly_table</body>
+          <body>arm_0_link</body>
+          <limits>0 0</limits>
+       </joint>
+     </kinbody>
+
+     <Manipulator name="lwr">
+       <base>arm_0_link</base>
+       <effector>tool</effector>
+     </Manipulator>
+</Robot>

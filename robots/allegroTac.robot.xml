@@ -1,0 +1,37 @@
+<Robot>
+  <KinBody file="allegroTac.kinbody.xml"/>
+  <Manipulator name="hand">
+    <base>handbase</base>
+    <effector>handbase</effector>
+    <!-- <Translation>0 0 0.16</Translation> -->
+    <joints>J10 J11 J12 J13 
+    	      J20 J21 J22 J23 
+    	      J30 J31 J32 J33 
+    	      J40 J41 J42 J43</joints>
+    
+    <closingdirection>0 1 1 1 
+    	                0 1 1 1 
+    	                0 1 1 1 
+    	                0 0 1 1 </closingdirection>
+    <direction>1 0 0</direction>
+  </Manipulator>
+  <jointvalues>0 -0.17 0.78 0.78 
+    		       0 -0.17 0.78 0.78
+    			     0.087 -0.087 0.87 0.78
+    			     -0.87 -0.435 0.261 0.78</jointvalues>
+  
+  <Manipulator name="indexfin">
+    <base>handbase</base>
+    <effector>fin1tool</effector>
+  </Manipulator>
+
+  <Manipulator name="middlefin">
+    <base>handbase</base>
+    <effector>fin2tool</effector>
+  </Manipulator>
+
+  <Manipulator name="thumbfin">
+    <base>handbase</base>
+    <effector>fin4tool</effector>
+  </Manipulator>
+</Robot>

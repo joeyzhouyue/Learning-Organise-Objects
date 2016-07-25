@@ -1,0 +1,12 @@
+input: objCfgInit, objCfgGoal, objList
+output: SeqAction
+----------------------------------------------------------------------------------
+seqAct = initSeqAct(objCfgInit, objCfgGoal) # move the object which would have the most collisions first
+objCfgCrrt = objCfgInit
+(seqActSucc, failStep, objClls) = checkCollision(objList, objCfgCrrt, objCfgGoal, seqAct) do # check collision at the end of every action on every single object, ignoring the collision during the single motions
+if seqActSucc is True then
+	return seqAct
+else then
+
+	
+	objCfgCrrt = cfgTillFailStep(objList, objCfgCrrt, seqAct, failStep)

@@ -1,0 +1,12 @@
+<KinBody name="kitchen_body">
+  <modelsdir>.</modelsdir>     <!--for relative path -->
+  <Body type="static">
+    <Geom type="trimesh">
+      <Data>../objects//Objects_in_kitchen/MiniKitchen.stl 0.0032</Data>
+      <Render>../objects//Objects_in_kitchen/MiniKitchen.stl 0.0032</Render>
+      <Collision>../objects//Objects_in_kitchen/MiniKitchen.stl 0.0032</Collision>
+      <transparency>0</transparency>
+      <diffusecolor>0.4 0 0.1</diffusecolor>
+    </Geom>      
+  </Body>
+</KinBody>

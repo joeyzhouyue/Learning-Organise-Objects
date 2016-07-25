@@ -1,0 +1,14 @@
+<KinBody name="fork">
+  <!-- <RotationAxis>1 0 0 90</RotationAxis> -->
+  <Body name = "mugbase" type="dynamic">
+    <Geom type="trimesh">
+      <Data>../objects//Objects_in_kitchen/fork.stl 0.03</Data>
+      <Render>../objects//Objects_in_kitchen/fork.stl 0.03</Render>
+      <Collision>../objects//Objects_in_kitchen/fork.stl 0.03</Collision>
+      <rotationaxis>0 1 0 -90</rotationaxis>
+      <RotationAxis>1 0 0 90</RotationAxis>
+      <DiffuseColor>0.862745 0.862745 0.862745 </DiffuseColor>
+      
+    </Geom>      
+  </Body>
+</KinBody>

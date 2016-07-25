@@ -1,0 +1,12 @@
+
+<KinBody name="mug">
+  <!-- <RotationAxis>1 0 0 90</RotationAxis> -->
+  <Body name = "mugbase" type="dynamic">
+    <Geom type="trimesh">
+      <Data>../objects//Objects_in_kitchen/blue_mug_y_up.iv</Data>
+      <Render>../objects//Objects_in_kitchen/blue_mug_y_up.iv</Render>
+      <Collision>../objects//Objects_in_kitchen/blue_mug_y_up.iv</Collision>
+      <RotationAxis>1 0 0 90</RotationAxis>
+    </Geom>      
+  </Body>
+</KinBody>

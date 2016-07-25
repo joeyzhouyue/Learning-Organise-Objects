@@ -1,0 +1,15 @@
+<KinBody name="kitchen_dinning_seat">
+  <modelsdir>.</modelsdir>     <!--for relative path -->
+  <Body type="dynamic">
+    <Geom type="trimesh">
+      <Data>../objects//Objects_in_kitchen/dinning_seat.stl 0.0016</Data>
+      <Render>../objects//Objects_in_kitchen/dinning_seat.stl 0.0016</Render>
+      <Collision>../objects//Objects_in_kitchen/dinning_seat.stl 0.0016</Collision>
+      <transparency>0</transparency>
+      <rotationaxis>0 0 1 180</rotationaxis>
+      <Translation>0 0 0.481</Translation>
+      <DiffuseColor>1 0.960784 0.933333 </DiffuseColor>
+      
+    </Geom> 
+  </Body>
+</KinBody>

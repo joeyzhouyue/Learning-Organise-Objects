@@ -1,0 +1,11 @@
+<KinBody name="kitchen_cafe_table1">
+  <modelsdir>.</modelsdir>     <!--for relative path -->
+  <Body type="static">
+    <Geom type="trimesh">
+      <Data>../objects//Objects_in_kitchen/cafe_table.dae 0.04</Data>
+      <Render>../objects//Objects_in_kitchen/cafe_table.dae 0.04</Render>
+      <Collision>../objects//Objects_in_kitchen/cafe_table.dae 0.04</Collision>
+      <DiffuseColor>0.490196 0.619608 0.752941 </DiffuseColor>
+    </Geom>      
+  </Body>
+</KinBody>

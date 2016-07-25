@@ -1,0 +1,313 @@
+  <KinBody name="LWR">
+        <Body name="arm_0_link" type="dynamic">
+        <Translation>0.0  0.0  0.0</Translation>
+        <Geom type="trimesh">
+          <Data>lbr_iv/arm_lwr_link01.obj</Data>
+          <Render>lbr_iv/arm_lwr_link01.obj</Render>
+        </Geom>
+      </Body>
+
+    
+      <Body name="arm_1_link" type="dynamic">
+        <!-- Offset from is a fast way of specifying that the translation and rotation of this-->
+        <!-- body should be relative to another link-->
+        <offsetfrom>arm_0_link</offsetfrom>
+        <!-- Translation relative to Base-->
+        <Translation>0 0 0.11</Translation>
+        <!--quat>-0.150  0 0 0.989</quat>-->
+        <Geom type="trimesh">
+          <Data>lbr_iv/joint_1_collision.stl</Data>
+          <Render>lbr_iv/joint_1_collision.stl</Render>
+        </Geom>
+      </Body>
+
+       <Body name="ring_link_1" type="dynamic">
+        <!-- Offset from is a fast way of specifying that the translation and rotation of this-->
+        <!-- body should be relative to another link-->
+        <offsetfrom>arm_1_link</offsetfrom>
+        <!-- Translation relative to Base-->
+        <Translation>0 0 0</Translation>
+        <Geom type="cylinder">
+          <rotationaxis>1 0 0 90</rotationaxis>
+          <radius>0.062</radius>
+          <height>0.018</height>
+    <diffuseColor>0 0.4 1</diffuseColor>
+        </Geom>
+      </Body>
+
+      <Joint name="ring_joint_1_dummy" type="hinge" enable="false">
+        <body>ring_link_1</body>
+        <body>arm_1_link</body>
+        <limits>0 0</limits>
+      </Joint>
+
+
+
+      <Body name="arm_2_link" type="dynamic">
+        <!-- Offset from is a fast way of specifying that the translation and rotation of this-->
+        <!-- body should be relative to another link-->
+        <offsetfrom>arm_1_link</offsetfrom>
+        <!-- Translation relative to Base-->
+        <Translation>0 0 0.1915</Translation>
+        <rotationaxis>1 0 0 90</rotationaxis>
+        <Geom type="trimesh">
+          <Data>lbr_iv/joint_2_collision.stl</Data>
+  	<Render>lbr_iv/joint_2_collision.stl</Render>
+        </Geom>
+      </Body>
+
+      <Body name="ring_link_2" type="dynamic">
+        <!-- Offset from is a fast way of specifying that the translation and rotation of this-->
+        <!-- body should be relative to another link-->
+        <offsetfrom>arm_2_link</offsetfrom>
+        <!-- Translation relative to Base-->
+        <Translation>0 0 0</Translation>
+        <Geom type="cylinder">
+          <rotationaxis>1 0 0 90</rotationaxis>
+          <radius>0.062</radius>
+          <height>0.016</height>
+  	<diffuseColor>0 0.4 1</diffuseColor>
+        </Geom>
+      </Body>
+
+      <Joint name="ring_joint_2_dummy" type="hinge" enable="false">
+        <body>ring_link_2</body>
+        <body>arm_2_link</body>
+        <limits>0 0</limits>
+      </Joint>
+
+
+      
+      <Body name="arm_3_link" type="dynamic">
+        <!-- Offset from is a fast way of specifying that the translation and rotation of this-->
+        <!-- body should be relative to another link-->
+        <offsetfrom>arm_2_link</offsetfrom>
+        <!-- Translation relative to Base-->
+        <Translation>0 0.2085 0</Translation>
+        <rotationaxis>1 0 0 -90</rotationaxis>
+        <Geom type="trimesh">
+          <Data>lbr_iv/joint_3_collision.stl</Data>
+          <Render>lbr_iv/joint_3_collision.stl</Render>
+        </Geom>
+      </Body>
+      
+      <Body name="ring_link_3" type="dynamic">
+        <!-- Offset from is a fast way of specifying that the translation and rotation of this-->
+        <!-- body should be relative to another link-->
+        <offsetfrom>arm_3_link</offsetfrom>
+        <!-- Translation relative to Base-->
+        <Translation>0 0 -0.008</Translation>
+        <Geom type="cylinder">
+          <rotationaxis>1 0 0 90</rotationaxis>
+          <radius>0.062</radius>
+          <height>0.016</height>
+  	<diffuseColor>0 0.4 1</diffuseColor>
+        </Geom>
+      </Body>
+
+      <Joint name="ring_joint_3_dummy" type="hinge" enable="false">
+        <body>ring_link_3</body>
+        <body>arm_3_link</body>
+        <limits>0 0</limits>
+      </Joint>
+
+
+      <Body name="arm_4_link" type="dynamic">
+        <!-- Offset from is a fast way of specifying that the translation and rotation of this-->
+        <!-- body should be relative to another link-->
+        <offsetfrom>arm_3_link</offsetfrom>
+        <!-- Translation relative to Base-->
+        <Translation>0 0.00 0.1915</Translation>
+        <rotationaxis>1 0 0 -90</rotationaxis>
+        <Geom type="trimesh">
+          <Data>lbr_iv/joint_4_collision.stl</Data>
+          <Render>lbr_iv/joint_4_collision.stl</Render>
+        </Geom>
+      </Body>
+
+      <Body name="ring_link_4" type="dynamic">
+        <!-- Offset from is a fast way of specifying that the translation and rotation of this-->
+        <!-- body should be relative to another link-->
+        <offsetfrom>arm_4_link</offsetfrom>
+        <!-- Translation relative to Base-->
+        <Translation>0 0 0</Translation>
+        <Geom type="cylinder">
+          <rotationaxis>1 0 0 90</rotationaxis>
+          <radius>0.062</radius>
+          <height>0.016</height>
+  	<diffuseColor>0 0.4 1</diffuseColor>
+        </Geom>
+      </Body>
+
+      <Joint name="ring_joint_4_dummy" type="hinge" enable="false">
+        <body>ring_link_4</body>
+        <body>arm_4_link</body>
+        <limits>0 0</limits>
+      </Joint>
+
+      <Body name="arm_5_link" type="dynamic">
+        <!-- Offset from is a fast way of specifying that the translation and rotation of this-->
+        <!-- body should be relative to another link-->
+        <offsetfrom>arm_4_link</offsetfrom>
+        <!-- Translation relative to Base-->
+        <Translation>0 -0.2085 0</Translation>
+        <rotationaxis>1 0 0 90</rotationaxis>
+        <Geom type="trimesh">
+          <Data>lbr_iv/joint_5_collision.stl</Data>
+          <Render>lbr_iv/joint_5_collision.stl</Render>
+        </Geom>
+      </Body>
+
+      <Body name="ring_link_5" type="dynamic">
+        <!-- Offset from is a fast way of specifying that the translation and rotation of this-->
+        <!-- body should be relative to another link-->
+        <offsetfrom>arm_5_link</offsetfrom>
+        <!-- Translation relative to Base-->
+        <Translation>0 0 -0.008</Translation>
+        <Geom type="cylinder">
+          <rotationaxis>1 0 0 90</rotationaxis>
+          <radius>0.062</radius>
+          <height>0.016</height>
+  	<diffuseColor>0 0.4 1</diffuseColor>
+        </Geom>
+      </Body>
+    
+      <Joint name="ring_joint_5_dummy" type="hinge" enable="false">
+        <body>ring_link_5</body>
+        <body>arm_5_link</body>
+        <limits>0 0</limits>
+      </Joint>
+
+
+      <Body name="arm_6_link" type="dynamic">
+        <!-- Offset from is a fast way of specifying that the translation and rotation of this-->
+        <!-- body should be relative to another link-->
+        <offsetfrom>arm_5_link</offsetfrom>
+        <!-- Translation relative to Base-->
+        <Translation>0 0.046 0.1815</Translation>
+        <rotationaxis>1 0 0 90</rotationaxis>
+        <Geom type="trimesh">
+          <Data>lbr_iv/joint_6_collision.stl</Data>
+          <Render>lbr_iv/joint_6_collision.stl</Render>
+        </Geom>
+      </Body>
+      <Body name="ring_link_6" type="dynamic">
+        <!-- Offset from is a fast way of specifying that the translation and rotation of this-->
+        <!-- body should be relative to another link-->
+        <offsetfrom>arm_6_link</offsetfrom>
+        <!-- Translation relative to Base-->
+        <Translation>0 0 0</Translation>
+        <Geom type="cylinder">
+          <rotationaxis>1 0 0 90</rotationaxis>
+          <radius>0.062</radius>
+          <height>0.016</height>
+    <diffuseColor>0 0.4 1</diffuseColor>
+        </Geom>
+      </Body>
+
+      <Joint name="ring_joint_6_dummy" type="hinge" enable="false">
+        <body>ring_link_6</body>
+        <body>arm_6_link</body>
+        <limits>0 0</limits>
+      </Joint>
+
+      
+      <Body name="arm_7_link" type="dynamic">
+        <!-- Offset from is a fast way of specifying that the translation and rotation of this-->
+        <!-- body should be relative to another link-->
+        <offsetfrom>arm_6_link</offsetfrom>
+        <!-- Translation relative to Base-->
+        <Translation>0 0.057 0.046</Translation>
+        <rotationaxis>1 0 0 -90</rotationaxis>
+        <Geom type="trimesh">
+          <Data>lbr_iv/joint_7_collision.stl</Data>
+          <Render>lbr_iv/joint_7_collision.stl</Render>
+        </Geom>
+      </Body>
+       <Body name="tool" type="dynamic">
+        <!-- Offset from is a fast way of specifying that the translation and rotation of this-->
+        <!-- body should be relative to another link-->
+        <offsetfrom>arm_7_link</offsetfrom>
+        <!-- Translation relative to Base-->
+        <Translation>0 0 0.021</Translation>
+      </Body>
+             
+      <Joint name="tool_joint_dummy" type="hinge" enable="false">
+        <body>arm_7_link</body>
+        <body>tool</body>
+        <offsetfrom>tool</offsetfrom>
+        <limits>0 0</limits>
+      </Joint>
+      
+      <Joint name="arm_1_joint" type="hinge">
+        <Body>arm_0_link</Body>
+        <Body>arm_1_link</Body>
+        <offsetfrom>arm_1_link</offsetfrom>
+        <weight>4</weight>
+        <limitsdeg>-170 170</limitsdeg>
+        <axis>0 0 1</axis>
+        <maxvel>3</maxvel>
+        <resolution>0.1</resolution>
+      </Joint>  
+      
+      <Joint name="arm_2_joint" type="hinge">
+        <Body>arm_1_link</Body>
+        <Body>arm_2_link</Body>
+        <offsetfrom>arm_2_link</offsetfrom>
+        <weight>4</weight>
+        <limitsdeg>-120 120</limitsdeg>
+        <axis>0 0 1</axis>
+        <maxvel>3</maxvel>
+        <resolution>0.1</resolution>
+      </Joint>  
+      <Joint name="arm_3_joint" type="hinge">
+        <Body>arm_2_link</Body>
+        <Body>arm_3_link</Body>
+        <offsetfrom>arm_3_link</offsetfrom>
+        <weight>4</weight>
+        <limitsdeg>-170 170</limitsdeg>
+        <axis>0 0 1</axis>
+        <maxvel>3</maxvel>
+        <resolution>0.1</resolution>
+      </Joint>  
+      <Joint name="arm_4_joint" type="hinge">
+        <Body>arm_3_link</Body>
+        <Body>arm_4_link</Body>
+        <offsetfrom>arm_4_link</offsetfrom>
+        <weight>4</weight>
+        <limitsdeg>-120 120</limitsdeg>
+        <axis>0 0 1</axis>
+        <maxvel>3</maxvel>
+        <resolution>0.1</resolution>
+      </Joint>  
+      <Joint name="arm_5_joint" type="hinge">
+        <Body>arm_4_link</Body>
+        <Body>arm_5_link</Body>
+        <offsetfrom>arm_5_link</offsetfrom>
+        <weight>4</weight>
+        <limitsdeg>-170 170</limitsdeg>
+        <axis>0 0 1</axis>
+        <maxvel>3</maxvel>
+        <resolution>0.1</resolution>
+      </Joint>  
+      <Joint name="arm_6_joint" type="hinge">
+        <Body>arm_5_link</Body>
+        <Body>arm_6_link</Body>
+        <offsetfrom>arm_6_link</offsetfrom>
+        <weight>4</weight>
+        <limitsdeg>-120 120</limitsdeg>
+        <axis>0 0 1</axis>
+        <maxvel>3</maxvel>
+        <resolution>0.1</resolution>
+      </Joint>  
+      <Joint name="arm_7_joint" type="hinge">
+        <Body>arm_6_link</Body>
+        <Body>arm_7_link</Body>
+        <offsetfrom>arm_7_link</offsetfrom>
+        <weight>4</weight>
+        <limitsdeg>-170 170</limitsdeg>
+        <axis>0 0 1</axis>
+        <maxvel>3</maxvel>
+        <resolution>0.1</resolution>
+      </Joint> 
+     </KinBody>

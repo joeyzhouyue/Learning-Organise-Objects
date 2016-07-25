@@ -1,0 +1,18 @@
+<KinBody name="kitchen_ladle">
+  <modelsdir>.</modelsdir>     <!--for relative path -->
+  <Body type="dynamic">
+    <Geom type="trimesh">
+      <Data>../objects//Objects_in_kitchen/Ladle.stl 0.035</Data>
+      <Render>../objects//Objects_in_kitchen/Ladle.stl 0.035</Render>
+      <Collision>../objects//Objects_in_kitchen/Ladle.stl 0.035</Collision>
+      <transparency>0</transparency>
+      <RotationAxis>1 0 0 90</RotationAxis>
+      <RotationAxis>0 1 0 180</RotationAxis>
+      <RotationAxis>0 0 1 90</RotationAxis>
+      <RotationAxis>0 0 1 -30</RotationAxis>
+      <DiffuseColor>0.862745 0.862745 0.862745 </DiffuseColor>
+      <Translation>0.172 -0.1 0.078</Translation>
+
+    </Geom>      
+  </Body>
+</KinBody>

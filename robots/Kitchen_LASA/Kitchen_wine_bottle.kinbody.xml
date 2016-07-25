@@ -1,0 +1,14 @@
+<KinBody name="kitchen_wine_bottle">
+  <modelsdir>.</modelsdir>     <!--for relative path -->
+  <Body type="dynamic">
+    <Geom type="trimesh">
+      <Data>../objects//Objects_in_kitchen/wine_bottle.stl 0.004</Data>
+      <Render>../objects//Objects_in_kitchen/wine_bottle.stl 0.004</Render>
+      <Collision>../objects//Objects_in_kitchen/wine_bottle.stl 0.004</Collision>
+      <transparency>0</transparency>
+      <DiffuseColor>0.156863 0.156863 0.156863 </DiffuseColor>
+      <RotationAxis>1 0 0 90</RotationAxis>
+
+    </Geom>      
+  </Body>
+</KinBody>

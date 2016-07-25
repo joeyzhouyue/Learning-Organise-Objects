@@ -1,0 +1,13 @@
+<KinBody name="kitchen_glass">
+  <modelsdir>.</modelsdir>     <!--for relative path -->
+  <Body type="dynamic">
+    <Geom type="trimesh">
+      <Data>../objects//Objects_in_kitchen/glass.stl 0.023</Data>
+      <Render>../objects//Objects_in_kitchen/glass.stl 0.023</Render>
+      <Collision>../objects//Objects_in_kitchen/glass.stl 0.023</Collision>
+      <transparency>0.7</transparency>
+      <DiffuseColor>0.564706 0.933333 0.564706 </DiffuseColor>
+      <Translation>-1.23697 -0.83947 0.001</Translation>
+    </Geom>      
+  </Body>
+</KinBody>

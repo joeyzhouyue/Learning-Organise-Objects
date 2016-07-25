@@ -1,0 +1,27 @@
+<!-- combines the LWR and Allegro Hand-->
+<!-- table-->
+<Robot name="LWR-Allegro">
+  <!--
+    <modelsdir>.</modelsdir>  
+ -->
+    <KinBody file="../lwr.kinbody.xml"/>
+    <KinBody file="../allegro.kinbody.xml"/>
+    <kinbody>
+       <body name="handbase">
+         <offsetfrom>arm_7_link</offsetfrom>
+         <Translation>0 0 0.015</Translation>
+   <!--     		 <rotationaxis>0 0 1 180</rotationaxis> -->         
+       </body>
+       <joint name="dummyhand" type="hinge" enable="false">
+         <body>arm_7_link</body>
+         <body>handbase</body>
+         <limits>0 0</limits>
+       </joint>
+     </kinbody>
+<!--    
+     <Manipulator name="lwr">
+       <base>arm_0_link</base>
+       <effector>tool</effector>
+     </Manipulator>
+  -->         
+</Robot>

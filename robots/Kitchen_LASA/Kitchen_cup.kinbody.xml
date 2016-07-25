@@ -1,0 +1,15 @@
+<KinBody name="kitchen_cup">
+  <modelsdir>.</modelsdir>     <!--for relative path -->
+  <Body type="dynamic">
+    <Geom type="trimesh">
+      <Data>../objects//Objects_in_kitchen/Cup.stl 0.023</Data>
+      <Render>../objects//Objects_in_kitchen/Cup.stl 0.023</Render>
+      <Collision>../objects//Objects_in_kitchen/Cup.stl 0.023</Collision>
+      <transparency>0</transparency>
+      <DiffuseColor>1 0.960784 0.933333 </DiffuseColor>
+      <RotationAxis>1 0 0 90</RotationAxis>
+      <Translation>-0.001 -0.014 0.003</Translation>
+
+    </Geom>      
+  </Body>
+</KinBody>

@@ -1,0 +1,518 @@
+<KinBody name="AllegroHand">
+  <modelsdir>./AllegroHand</modelsdir>  
+  <Body name="handbase" type="dynamic">
+
+    <Translation>0 0 0.095</Translation>
+    <RotationMat>-1 0 0 0 -1 0 0 0 1</RotationMat>
+
+    <Geom type="trimesh" modifiable="false">
+      <Translation>-0.0282 -0.057 -0.095</Translation>
+      <RotationMat>1 0 0 0 -1 0 0 0 -1</RotationMat>
+      <diffuseColor>0.1 0.1 0.1</diffuseColor>
+      <data>Robots/shapes/allegro_palm_left.obj</data>
+      <Render>Robots/shapes/allegro_palm_left.obj</Render>
+    </Geom>
+  </Body>
+
+  
+
+
+  <!-- finger 1 (4 dof)-->
+
+  <Body name="HandF1Dof0" type="dynamic">
+    <offsetfrom>handbase</offsetfrom>
+    <Translation>0 -0.044981 -0.002298</Translation>
+    <RotationMat>1.000000 0.000000 0.000000 0.000000 0.996195 -0.087156 0.000000 0.087156 0.996195</RotationMat>
+
+    <Geom type="trimesh" modifiable="false">
+      <Translation>-0.0098 -0.012 0</Translation>
+      <RotationMat>1 0 0 0 0 -1 0 1 0</RotationMat>
+      <data>Robots/shapes/allegro_fingerdof0.obj</data>
+      <Render>Robots/shapes/allegro_fingerdof0.obj</Render>
+    </Geom>
+  </Body>
+
+  <Body name="HandF1Dof1" type="dynamic">
+    <offsetfrom>HandF1Dof0</offsetfrom>
+    <Translation>0 0 0.0164</Translation>
+    <RotationMat> 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 -1.000000 0.000000</RotationMat>
+
+    <Geom type="trimesh" modifiable="false">
+      <Translation> -0.0098 -0.0638 0.012</Translation>
+      <RotationMat>1 0 0 0 1 0 0 0 1</RotationMat>
+      <data>Robots/shapes/allegro_fingerdof1.obj</data>
+      <Render>Robots/shapes/allegro_fingerdof1.obj</Render>
+    </Geom>
+  </Body>
+
+  <Body name="HandF1Dof2" type="dynamic">
+    <offsetfrom>HandF1Dof1</offsetfrom>
+    <Translation>0 -0.054 0</Translation>
+    <RotationMat> 0.000000 1.000000 0.000000 -1.000000 0.000000 0.000000 0.000000 0.000000 1.000000</RotationMat>
+
+    <Geom type="trimesh" modifiable="false">
+      <Translation> -0.0098 -0.0098 -0.012</Translation>
+      <RotationMat>0 1 0 1 0 0 0 0 -1</RotationMat>
+      <data>Robots/shapes/allegro_fingerdof2.obj</data>
+      <Render>Robots/shapes/allegro_fingerdof2.obj</Render>
+    </Geom>
+  </Body>
+
+  <Body name="HandF1Dof3" type="dynamic">
+    <offsetfrom>HandF1Dof2</offsetfrom>
+    <Translation>0.0384 0 0</Translation>
+    <RotationMat> 1.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 1.000000</RotationMat>
+
+    <Geom type="trimesh" modifiable="false">
+      <Translation> 0.016 -0.0098 0.012</Translation>
+      <RotationMat>0 -1 0 1 0 0 0 0 1</RotationMat>
+      <data>Robots/shapes/allegro_fingerdof0.obj</data>
+      <Render>Robots/shapes/allegro_fingerdof0.obj</Render>
+    </Geom>
+  </Body>
+
+  <Body name="HandF1Tip" type="dynamic">
+    <offsetfrom>HandF1Dof3</offsetfrom>
+    <Translation>0 0 0</Translation>
+    <RotationMat> 1.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 1.000000</RotationMat>
+
+    <Geom type="trimesh" modifiable="false">
+      <Translation> 0.016 0.012 0.012</Translation>
+      <RotationMat>0 1 0 -1 0 0 0 0 1</RotationMat>
+      <diffuseColor>1 0 0</diffuseColor>
+      <data>Robots/shapes/allegro_fingertip.obj</data>
+      <Render>Robots/shapes/allegro_fingertip.obj</Render>
+    </Geom>
+  </Body>
+  <Body name="fin1tool" type="dynamic">
+    <!-- Offset from is a fast way of specifying that the translation and rotation of this-->
+    <!-- body should be relative to another link-->
+    <offsetfrom>HandF1Tip</offsetfrom>
+    <!-- Translation relative to Base-->
+    <Translation>0.035 0.0 0.0</Translation>
+  </Body>
+
+  <Joint type="hinge" name="J10">
+    <Body>handbase</Body>
+    <Body>HandF1Dof0</Body>
+    <offsetfrom>HandF1Dof0</offsetfrom>
+    <limitsdeg>-26.929016 26.929016</limitsdeg>
+    <axis>0 0 1</axis>
+  </Joint>
+
+  <Joint type="hinge" name="J11">
+    <Body>HandF1Dof0</Body>
+    <Body>HandF1Dof1</Body>
+    <offsetfrom>HandF1Dof1</offsetfrom>
+    <limitsdeg>-11.229973 92.246205</limitsdeg>
+    <axis>0 0 1</axis>
+  </Joint>
+
+  <Joint type="hinge" name="J12">
+    <Body>HandF1Dof1</Body>
+    <Body>HandF1Dof2</Body>
+    <offsetfrom>HandF1Dof2</offsetfrom>
+    <limitsdeg>-9.969466 97.918487</limitsdeg>
+    <axis>0 0 1</axis>
+  </Joint>
+
+  <Joint type="hinge" name="J13">
+    <Body>HandF1Dof2</Body>
+    <Body>HandF1Dof3</Body>
+    <offsetfrom>HandF1Dof3</offsetfrom>
+    <limitsdeg>-13.006142 92.704571</limitsdeg>
+    <axis>0 0 1</axis>
+  </Joint>
+
+  <Joint name="tip1" type="hinge" enable="false">
+    <Body>HandF1Dof3</Body>
+    <Body>HandF1Tip</Body>
+    <offsetfrom>HandF1Tip</offsetfrom>
+  </Joint>
+  <Joint name="tip1tool" type="hinge" enable="false">
+    <Body>HandF1Tip</Body>
+    <Body>fin1tool</Body>
+    <offsetfrom>fin1tool</offsetfrom>
+    <limitsdeg>0 0</limitsdeg>
+  </Joint>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- finger 2 (4 dof)-->
+
+  <Body name="HandF2Dof0" type="dynamic">
+    <offsetfrom>handbase</offsetfrom>
+    <Translation>0 0 0</Translation>
+    <RotationMat>1.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 1.000000</RotationMat>
+
+    <Geom type="trimesh" modifiable="false">
+      <Translation>-0.0098 -0.012 0</Translation>
+      <RotationMat>1 0 0 0 0 -1 0 1 0</RotationMat>
+      <data>Robots/shapes/allegro_fingerdof0.obj</data>
+      <Render>Robots/shapes/allegro_fingerdof0.obj</Render>
+    </Geom>
+  </Body>
+
+  <Body name="HandF2Dof1" type="dynamic">
+    <offsetfrom>HandF2Dof0</offsetfrom>
+    <Translation>0 0 0.0164</Translation>
+    <RotationMat> 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 -1.000000 0.000000</RotationMat>
+
+    <Geom type="trimesh" modifiable="false">
+      <Translation> -0.0098 -0.0638 0.012</Translation>
+      <RotationMat>1 0 0 0 1 0 0 0 1</RotationMat>
+      <data>Robots/shapes/allegro_fingerdof1.obj</data>
+      <Render>Robots/shapes/allegro_fingerdof1.obj</Render>
+    </Geom>
+  </Body>
+
+  <Body name="HandF2Dof2" type="dynamic">
+    <offsetfrom>HandF2Dof1</offsetfrom>
+    <Translation>0 -0.054 0</Translation>
+    <RotationMat> 0.000000 1.000000 0.000000 -1.000000 0.000000 0.000000 0.000000 0.000000 1.000000</RotationMat>
+
+    <Geom type="trimesh" modifiable="false">
+      <Translation> -0.0098 -0.0098 -0.012</Translation>
+      <RotationMat>0 1 0 1 0 0 0 0 -1</RotationMat>
+      <data>Robots/shapes/allegro_fingerdof2.obj</data>
+      <Render>Robots/shapes/allegro_fingerdof2.obj</Render>
+    </Geom>
+  </Body>
+
+  <Body name="HandF2Dof3" type="dynamic">
+    <offsetfrom>HandF2Dof2</offsetfrom>
+    <Translation>0.0384 0 0</Translation>
+    <RotationMat> 1.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 1.000000</RotationMat>
+
+    <Geom type="trimesh" modifiable="false">
+      <Translation> 0.016 -0.0098 0.012</Translation>
+      <RotationMat>0 -1 0 1 0 0 0 0 1</RotationMat>
+      <data>Robots/shapes/allegro_fingerdof0.obj</data>
+      <Render>Robots/shapes/allegro_fingerdof0.obj</Render>
+    </Geom>
+  </Body>
+
+  <Body name="HandF2Tip" type="dynamic">
+    <offsetfrom>HandF2Dof3</offsetfrom>
+    <Translation>0 0 0</Translation>
+    <RotationMat> 1.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 1.000000</RotationMat>
+
+    <Geom type="trimesh" modifiable="false">
+      <Translation> 0.016 0.012 0.012</Translation>
+      <RotationMat>0 1 0 -1 0 0 0 0 1</RotationMat>
+      <diffuseColor>0 1 0</diffuseColor>
+      <data>Robots/shapes/allegro_fingertip.obj</data>
+      <Render>Robots/shapes/allegro_fingertip.obj</Render>
+    </Geom>
+  </Body>
+  <Body name="fin2tool" type="dynamic">
+    <!-- Offset from is a fast way of specifying that the translation and rotation of this-->
+    <!-- body should be relative to another link-->
+    <offsetfrom>HandF2Tip</offsetfrom>
+    <!-- Translation relative to Base-->
+    <Translation>0.035 0.0 0.0</Translation>
+  </Body>
+
+
+  <Joint type="hinge" name="J20">
+    <Body>handbase</Body>
+    <Body>HandF2Dof0</Body>
+    <offsetfrom>HandF2Dof0</offsetfrom>
+    <limitsdeg>-26.929016 26.929016</limitsdeg>
+    <axis>0 0 1</axis>
+  </Joint>
+
+  <Joint type="hinge" name="J21">
+    <Body>HandF2Dof0</Body>
+    <Body>HandF2Dof1</Body>
+    <offsetfrom>HandF2Dof1</offsetfrom>
+    <limitsdeg>-11.229973 92.246205</limitsdeg>
+    <axis>0 0 1</axis>
+  </Joint>
+
+  <Joint type="hinge" name="J22">
+    <Body>HandF2Dof1</Body>
+    <Body>HandF2Dof2</Body>
+    <offsetfrom>HandF2Dof2</offsetfrom>
+    <limitsdeg>-9.969466 97.918487</limitsdeg>
+    <axis>0 0 1</axis>
+  </Joint>
+
+  <Joint type="hinge" name="J23">
+    <Body>HandF2Dof2</Body>
+    <Body>HandF2Dof3</Body>
+    <offsetfrom>HandF2Dof3</offsetfrom>
+    <limitsdeg>-13.006142 92.704571</limitsdeg>
+    <axis>0 0 1</axis>
+  </Joint>
+
+  <Joint name="tip2" type="hinge" enable="false">
+    <Body>HandF2Dof3</Body>
+    <Body>HandF2Tip</Body>
+    <offsetfrom>HandF2Tip</offsetfrom>
+  </Joint>
+  <Joint name="tip2tool" type="hinge" enable="false">
+    <Body>HandF2Tip</Body>
+    <Body>fin2tool</Body>
+    <offsetfrom>fin2tool</offsetfrom>
+    <limitsdeg>0 0</limitsdeg>
+  </Joint>
+
+
+<!-- finger 3 (4 dof)-->
+
+  <Body name="HandF3Dof0" type="dynamic">
+    <offsetfrom>handbase</offsetfrom>
+    <Translation>0 0.044981 -0.002298</Translation>
+    <RotationMat>1.000000 0.000000 0.000000 0.000000 0.996195 0.087156 0.000000 -0.087156 0.996195</RotationMat>
+
+    <Geom type="trimesh" modifiable="false">
+      <Translation>-0.0098 -0.012 0</Translation>
+      <RotationMat>1 0 0 0 0 -1 0 1 0</RotationMat>
+      <data>Robots/shapes/allegro_fingerdof0.obj</data>
+      <Render>Robots/shapes/allegro_fingerdof0.obj</Render>
+    </Geom>
+  </Body>
+
+  <Body name="HandF3Dof1" type="dynamic">
+    <offsetfrom>HandF3Dof0</offsetfrom>
+    <Translation>0 0 0.0164</Translation>
+    <RotationMat> 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 -1.000000 0.000000</RotationMat>
+
+    <Geom type="trimesh" modifiable="false">
+      <Translation> -0.0098 -0.0638 0.012</Translation>
+      <RotationMat>1 0 0 0 1 0 0 0 1</RotationMat>
+      <data>Robots/shapes/allegro_fingerdof1.obj</data>
+      <Render>Robots/shapes/allegro_fingerdof1.obj</Render>
+    </Geom>
+  </Body>
+
+  <Body name="HandF3Dof2" type="dynamic">
+    <offsetfrom>HandF3Dof1</offsetfrom>
+    <Translation>0 -0.054 0</Translation>
+    <RotationMat> 0.000000 1.000000 0.000000 -1.000000 0.000000 0.000000 0.000000 0.000000 1.000000</RotationMat>
+
+    <Geom type="trimesh" modifiable="false">
+      <Translation> -0.0098 -0.0098 -0.012</Translation>
+      <RotationMat>0 1 0 1 0 0 0 0 -1</RotationMat>
+      <data>Robots/shapes/allegro_fingerdof2.obj</data>
+      <Render>Robots/shapes/allegro_fingerdof2.obj</Render>
+    </Geom>
+  </Body>
+
+  <Body name="HandF3Dof3" type="dynamic">
+    <offsetfrom>HandF3Dof2</offsetfrom>
+    <Translation>0.0384 0 0</Translation>
+    <RotationMat> 1.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 1.000000</RotationMat>
+
+    <Geom type="trimesh" modifiable="false">
+      <Translation> 0.016 -0.0098 0.012</Translation>
+      <RotationMat>0 -1 0 1 0 0 0 0 1</RotationMat>
+      <data>Robots/shapes/allegro_fingerdof0.obj</data>
+      <Render>Robots/shapes/allegro_fingerdof0.obj</Render>
+    </Geom>
+  </Body>
+
+  <Body name="HandF3Tip" type="dynamic">
+    <offsetfrom>HandF3Dof3</offsetfrom>
+    <Translation>0 0 0</Translation>
+    <RotationMat> 1.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 1.000000</RotationMat>
+
+    <Geom type="trimesh" modifiable="false">
+      <Translation> 0.016 0.012 0.012</Translation>
+      <RotationMat>0 1 0 -1 0 0 0 0 1</RotationMat>
+      <diffuseColor>0 0 1</diffuseColor>
+      <data>Robots/shapes/allegro_fingertip.obj</data>
+      <Render>Robots/shapes/allegro_fingertip.obj</Render>
+    </Geom>
+  </Body>
+  <Body name="fin3tool" type="dynamic">
+    <!-- Offset from is a fast way of specifying that the translation and rotation of this-->
+    <!-- body should be relative to another link-->
+    <offsetfrom>HandF3Tip</offsetfrom>
+    <!-- Translation relative to Base-->
+    <Translation>0.035 0.0 0.0</Translation>
+  </Body>
+
+
+  <Joint type="hinge" name="J30">
+    <Body>handbase</Body>
+    <Body>HandF3Dof0</Body>
+    <offsetfrom>HandF3Dof0</offsetfrom>
+    <limitsdeg>-26.929016 26.929016</limitsdeg>
+    <axis>0 0 1</axis>
+  </Joint>
+
+  <Joint type="hinge" name="J31">
+    <Body>HandF3Dof0</Body>
+    <Body>HandF3Dof1</Body>
+    <offsetfrom>HandF3Dof1</offsetfrom>
+    <limitsdeg>-11.229973 92.246205</limitsdeg>
+    <axis>0 0 1</axis>
+  </Joint>
+
+  <Joint type="hinge" name="J32">
+    <Body>HandF3Dof1</Body>
+    <Body>HandF3Dof2</Body>
+    <offsetfrom>HandF3Dof2</offsetfrom>
+    <limitsdeg>-9.969466 97.918487</limitsdeg>
+    <axis>0 0 1</axis>
+  </Joint>
+
+  <Joint type="hinge" name="J33">
+    <Body>HandF3Dof2</Body>
+    <Body>HandF3Dof3</Body>
+    <offsetfrom>HandF3Dof3</offsetfrom>
+    <limitsdeg>-13.006142 92.704571</limitsdeg>
+    <axis>0 0 1</axis>
+  </Joint>
+
+  <Joint name="tip3" type="hinge" enable="false">
+    <Body>HandF3Dof3</Body>
+    <Body>HandF3Tip</Body>
+    <offsetfrom>HandF3Tip</offsetfrom>
+  </Joint>
+  <Joint name="tip3tool" type="hinge" enable="false">
+    <Body>HandF3Tip</Body>
+    <Body>fin3tool</Body>
+    <offsetfrom>fin3tool</offsetfrom>
+    <limitsdeg>0 0</limitsdeg>
+  </Joint>
+
+
+<!-- finger 4 (4 dof)-->
+
+  <Body name="HandF4Dof0" type="dynamic">
+    <offsetfrom>handbase</offsetfrom>
+    <Translation>-0.0182 -0.0168753 -0.07308</Translation>
+    <RotationMat>1 0 0 0 -0.996195 0.087156 0 -0.087156 -0.996195</RotationMat>
+
+    <Geom type="trimesh" modifiable="false">
+      <Translation>0.025 -0.0088 0.010</Translation>
+      <RotationMat>-1 0 0 0 0 -1 0 -1 0</RotationMat>
+      <data>Robots/shapes/allegro_thumbdof0.obj</data>
+      <Render>Robots/shapes/allegro_thumbdof0.obj</Render>
+    </Geom>
+  </Body>
+
+  <Body name="HandF4Dof1" type="dynamic">
+    <offsetfrom>HandF4Dof0</offsetfrom>
+    <Translation>0 0.0375 -0.0034</Translation>
+    <RotationMat>1 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 -1.000000 0.000000</RotationMat>
+
+    <Geom type="trimesh" modifiable="false">
+      <Translation>0.012 -0.0098 0</Translation>
+      <RotationMat>0 0 1 1 0 0 0 1 0</RotationMat>
+      <data>Robots/shapes/allegro_fingerdof0.obj</data>
+      <Render>Robots/shapes/allegro_fingerdof0.obj</Render>
+    </Geom>
+  </Body>
+
+  <Body name="HandF4Dof2" type="dynamic">
+    <offsetfrom>HandF4Dof1</offsetfrom>
+    <Translation>0 0 0.0177</Translation>
+    <RotationMat> 0.000000 0.000000 -1.000000 1.000000 0.000000 0.000000 0.000000 -1.000000 0.000000</RotationMat>
+
+    <Geom type="trimesh" modifiable="false">
+      <Translation>-0.0098 -0.063 0.012</Translation>
+      <RotationMat>1 0 0 0 1 0 0 0 1</RotationMat>
+      <data>Robots/shapes/allegro_fingerdof1.obj</data>
+      <Render>Robots/shapes/allegro_fingerdof1.obj</Render>
+    </Geom>
+  </Body>
+
+  <Body name="HandF4Dof3" type="dynamic">
+    <offsetfrom>HandF4Dof2</offsetfrom>
+    <Translation>0 -0.0514 0</Translation>
+    <RotationMat> 0.000000 1.000000 0.000000 -1.000000 0.000000 0.000000 0.000000 0.000000 1.000000</RotationMat>
+
+    <Geom type="trimesh" modifiable="false">
+      <Translation> -0.0078 0.0098 0.012</Translation>
+      <RotationMat>0 1 0 -1 0 0 0 0 1</RotationMat>
+      <data>Robots/shapes/allegro_thumbdof3.obj</data>
+      <Render>Robots/shapes/allegro_thumbdof3.obj</Render>
+    </Geom>
+  </Body>
+
+  <Body name="HandF4Tip" type="dynamic">
+    <offsetfrom>HandF4Dof3</offsetfrom>
+    <Translation>0 0 0</Translation>
+    <RotationMat> 1.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 1.000000</RotationMat>
+
+    <Geom type="trimesh" modifiable="false">
+      <Translation> 0.0463 0.012 0.012</Translation>
+      <RotationMat>0 1 0 -1 0 0 0 0 1</RotationMat>
+      <diffuseColor>1 1 0</diffuseColor>
+      <data>Robots/shapes/allegro_fingertip.obj</data>
+      <Render>Robots/shapes/allegro_fingertip.obj</Render>
+    </Geom>
+  </Body>
+  <Body name="fin4tool" type="dynamic">
+    <!-- Offset from is a fast way of specifying that the translation and rotation of this-->
+    <!-- body should be relative to another link-->
+    <offsetfrom>HandF4Tip</offsetfrom>
+    <!-- Translation relative to Base-->
+    <Translation>0.035 0.0 0.0</Translation>
+  </Body>
+
+
+  <Joint type="hinge" name="J40">
+    <Body>handbase</Body>
+    <Body>HandF4Dof0</Body>
+    <offsetfrom>HandF4Dof0</offsetfrom>
+    <limitsdeg>-79 -15</limitsdeg>
+    <axis>0 0 1</axis>
+  </Joint>
+
+  <Joint type="hinge" name="J41">
+    <Body>HandF4Dof0</Body>
+    <Body>HandF4Dof1</Body>
+    <offsetfrom>HandF4Dof1</offsetfrom>
+    <limitsdeg>-66 6</limitsdeg>
+    <axis>0 0 1</axis>
+  </Joint>
+
+  <Joint type="hinge" name="J42">
+    <Body>HandF4Dof1</Body>
+    <Body>HandF4Dof2</Body>
+    <offsetfrom>HandF4Dof2</offsetfrom>
+    <limitsdeg>-10.828902 94.194261</limitsdeg>
+    <axis>0 0 1</axis>
+  </Joint>
+
+  <Joint type="hinge" name="J43">
+    <Body>HandF4Dof2</Body>
+    <Body>HandF4Dof3</Body>
+    <offsetfrom>HandF4Dof3</offsetfrom>
+    <limitsdeg>-9.281916 98.491445</limitsdeg>
+    <axis>0 0 1</axis>
+  </Joint>
+
+  <Joint name="tip4" type="hinge" enable="false">
+    <Body>HandF4Dof3</Body>
+    <Body>HandF4Tip</Body>
+    <offsetfrom>HandF4Tip</offsetfrom>
+  </Joint>
+  <Joint name="tip4tool" type="hinge" enable="false">
+    <Body>HandF4Tip</Body>
+    <Body>fin4tool</Body>
+    <offsetfrom>fin4tool</offsetfrom>
+    <limitsdeg>0 0</limitsdeg>
+  </Joint>
+
+
+
+
+
+
+</KinBody>

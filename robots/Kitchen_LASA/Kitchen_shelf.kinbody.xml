@@ -1,0 +1,46 @@
+<KinBody name="ikeashelf">
+  <Body>
+    <!-- horizontal shelf -->
+    <Geom type="box">
+      <Translation>0 0 2</Translation>
+      <extents>0.2 0.7 0.01</extents>
+      <DiffuseColor>0.956863 0.643137 0.376471</DiffuseColor>>
+    </Geom>
+    <Geom type="box">
+      <Translation>0 0 1.5</Translation>
+      <extents>0.2 0.7 0.01</extents>
+      <DiffuseColor>0.956863 0.643137 0.376471</DiffuseColor>>
+    </Geom>
+    <Geom type="box">
+      <Translation>0 0 1</Translation>
+      <extents>0.2 0.7 0.01</extents>
+      <DiffuseColor>0.956863 0.643137 0.376471</DiffuseColor>>
+    </Geom>
+    <Geom type="box">
+      <Translation>0 0 0.5</Translation>
+      <extents>0.2 0.7 0.01</extents>
+      <DiffuseColor>0.956863 0.643137 0.376471</DiffuseColor>>
+    </Geom>
+    <Geom type="box">
+      <Translation>0 0 0.005</Translation>
+      <extents>0.2 0.7 0.01</extents>
+      <DiffuseColor>0.956863 0.643137 0.376471</DiffuseColor>>
+    </Geom>
+    <!-- vertical -->
+    <Geom type="box">
+      <Translation>0 0.69 1</Translation>
+      <extents>0.2 0.01 1</extents>
+      <DiffuseColor>0.956863 0.643137 0.376471</DiffuseColor>>
+    </Geom>
+    <Geom type="box">
+      <Translation>0 -0.69 1</Translation>
+      <extents>0.2 0.01 1</extents>
+      <DiffuseColor>0.956863 0.643137 0.376471</DiffuseColor>>
+    </Geom>
+    <Geom type="box">
+      <Translation>-0.13 0 1</Translation>
+      <extents>0.01 0.7 1</extents>
+      <DiffuseColor>0.956863 0.643137 0.376471</DiffuseColor>>
+    </Geom>
+  </Body>
+</KinBody>

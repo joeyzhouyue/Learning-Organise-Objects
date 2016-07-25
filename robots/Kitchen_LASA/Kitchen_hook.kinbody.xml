@@ -1,0 +1,12 @@
+<KinBody name="kitchen_hook">
+  <modelsdir>.</modelsdir>     <!--for relative path -->
+  <Body type="static">
+    <Geom type="trimesh">
+      <Data>../objects//Objects_in_kitchen/Hooks.stl 0.8</Data>
+      <Render>../objects//Objects_in_kitchen/Hooks.stl 0.8</Render>
+      <Collision>../objects//Objects_in_kitchen/Hooks.stl 0.8</Collision>
+      <transparency>0</transparency>
+      <DiffuseColor>1 0.54902 0 </DiffuseColor>>
+    </Geom>      
+  </Body>
+</KinBody>

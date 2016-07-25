@@ -1,0 +1,12 @@
+<KinBody name="kitchen_plate_another">
+  <modelsdir>.</modelsdir>     <!--for relative path -->
+  <Body type="dynamic">
+    <Geom type="trimesh">
+      <Data>../objects//Objects_in_kitchen/Plate.stl 0.0017</Data>
+      <Render>../objects//Objects_in_kitchen/Plate.stl 0.0017</Render>
+      <Collision>../objects//Objects_in_kitchen/Plate.stl 0.0017</Collision>
+      <transparency>0</transparency>
+      <DiffuseColor>0.294118 0 0.509804</DiffuseColor>
+    </Geom>      
+  </Body>
+</KinBody>

@@ -1,0 +1,14 @@
+<KinBody name="monitor">
+  <modelsdir>.</modelsdir>     <!--for relative path -->
+  <Body type="dynamic">
+    <Geom type="trimesh">
+      <Data>../objects//Objects_in_kitchen/monitor.stl 0.0008</Data>
+      <Render>../objects//Objects_in_kitchen/monitor.stl 0.0008</Render>
+      <Collision>../objects//Objects_in_kitchen/monitor.stl 0.0008</Collision>
+      <transparency>0</transparency>
+      <DiffuseColor>0 0 0 </DiffuseColor>
+      <!-- <RotationAxis>1 0 0 90</RotationAxis> -->
+
+    </Geom>      
+  </Body>
+</KinBody>

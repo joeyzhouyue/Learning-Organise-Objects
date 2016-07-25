@@ -1,0 +1,88 @@
+<!-- combines the moving base and arm with Allegro Hand-->
+
+<Robot name="lwr_lasa_experiment_1">
+  <!-- base desk-->
+  <KinBody>
+    <Body name="deskbase" type="dynamic">
+        <Geom type="box">
+          <extents>0.45 0.45 0.375</extents>
+          <translation>0 0 0.3751</translation>
+          <DiffuseColor>1 1 1 </DiffuseColor>
+          <!-- <RotationAxis>0 0 1 -70</RotationAxis> -->
+        </Geom>
+    </Body>
+  </KinBody>
+
+  <!-- lwr with allegroGrasp-->
+
+  <Robot name="LWR-Allegro">
+  <translation>0 0 0.75</translation>
+
+  <!--
+    <modelsdir>.</modelsdir>  
+ -->
+    <KinBody file="../lwr.kinbody.xml"/>
+    <KinBody file="../allegro.kinbody.xml"/>
+    <kinbody>
+       <body name="handbase">
+         <offsetfrom>arm_7_link</offsetfrom>
+         <Translation>0 0 0.015</Translation>
+   <!--          <rotationaxis>0 0 1 180</rotationaxis> -->         
+       </body>
+       <joint name="dummyhand" type="hinge" enable="false">
+         <body>arm_7_link</body>
+         <body>handbase</body>
+         <limits>0 0</limits>
+       </joint>
+     </kinbody>
+<!--    
+     <Manipulator name="lwr">
+       <base>arm_0_link</base>
+       <effector>tool</effector>
+     </Manipulator>
+  -->         
+</Robot>
+
+
+ <KinBody>
+    <Joint name="dummy" type="hinge" enable="false">
+      <Body>deskbase</Body>
+      <Body>arm_0_link</Body>
+      <limitsdeg>0 0</limitsdeg>
+    </Joint>
+  </KinBody>
+
+<Manipulator name="lwr">
+       <base>deskbase</base>
+       <effector>tool</effector>
+</Manipulator>
+
+  <!-- 
+
+<Manipulator name="deskbasemove">
+    <base>deskbase</base>
+    <effector>deskbase</effector>
+    <direction>1 1 0</direction>
+  </Manipulator>
+-->
+
+
+<!--
+
+    <KinBody file="lwr.kinbody.xml"/>
+    <KinBody file="allegro.kinbody.xml"/>
+    <kinbody>
+       <body name="handbase">
+         <offsetfrom>arm_7_link</offsetfrom>
+         <Translation>0 0 0.015</Translation>
+ 		 <rotationaxis>0 0 1 -180</rotationaxis>      
+       </body>
+       <joint name="dummyhand" type="hinge" enable="false">
+         <body>arm_7_link</body>
+         <body>handbase</body>
+         <limits>0 0</limits>
+       </joint>
+     </kinbody>
+
+   -->
+</Robot>
